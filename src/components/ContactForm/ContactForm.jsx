@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selector';
 import { nanoid } from 'nanoid';
 import { addContactThunk } from 'redux/contacts/operations';
+import { Title } from 'components/App.styled';
 
 const INITIAL_STATE = {
   name: '',
@@ -44,6 +45,7 @@ export const ContactForm = () => {
 
   return (
     <div>
+      <Title>Phonebook</Title>
       <Form onSubmit={handleSubmit}>
         <Labelfirst>
           Name:

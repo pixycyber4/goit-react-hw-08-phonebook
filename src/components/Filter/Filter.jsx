@@ -2,6 +2,7 @@ import React from 'react';
 import { Input } from './Filter.styled';
 import { useDispatch } from 'react-redux';
 import { filterContacts } from 'redux/contacts/contactsSlice';
+import { Title } from 'components/App.styled';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ export const Filter = () => {
 
   return (
     <div>
+      <Title>Contacts</Title>,
       <Input
         type="text"
         placeholder=" Contact Name"
