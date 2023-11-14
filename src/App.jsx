@@ -7,21 +7,24 @@ import Login from 'pages/Login';
 import { Layout } from 'components/Layout/Layout';
 import { useEffect } from 'react';
 import { refreshThunk } from 'redux/auth/operations';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import HomePage from 'pages/HomePage';
+import { selectIsLoggedIn, selectIsRefreshing } from 'redux/auth/selectors';
 
 export const App = () => {
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const refresh = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     dispatch(refreshThunk());
   }, [dispatch]);
 
-  return (
+  return refresh ? null : (
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
+          <Route index element={isLoggedIn ? <ContactList /> : <HomePage />} />
           <Route path="contacts" element={<ContactList />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
