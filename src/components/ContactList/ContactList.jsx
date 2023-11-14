@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { nanoid } from 'nanoid';
 import { ContactItem, Contacts, DeleteButton } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts, selectFilter } from 'redux/contacts/selector';
@@ -8,7 +7,6 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Title } from 'components/App.styled';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 import { Navigate } from 'react-router-dom';
-// import { Title } from 'components/App.styled';
 
 export const ContactList = () => {
   const contacts = useSelector(selectContacts);

@@ -1,6 +1,6 @@
 import { Loader } from 'components/Loader/Loader';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { logoutThunk } from 'redux/auth/operations';
 import {
   selectIsLoggedIn,
