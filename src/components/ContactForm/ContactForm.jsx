@@ -36,7 +36,7 @@ export const ContactForm = () => {
       return;
     }
 
-    dispatch(addContactThunk({ name, number, id: nanoid() }));
+    dispatch(addContactThunk({ id: nanoid(), name, number }));
     setFormData(INITIAL_STATE);
   };
 

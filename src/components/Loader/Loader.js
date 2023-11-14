@@ -9,13 +9,9 @@ export const Loader = () => {
         width="80"
         ariaLabel="blocks-loading"
         wrapperStyle={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginLeft: '790px',
-            marginTop: '50px'
         }}
         wrapperClass="blocks-wrapper"
-        colors={['#7070e4', '#3434ca', '#1e1e7f', '#8b8bcd', '#3c3c70']}
+        colors={['#a74dcd', '#b072ca', '#794f8b', '#b68ac9', '#b034e5']}
     />)
 
 }

@@ -5,11 +5,11 @@ export const Form = styled.form`
   flex-direction: column;
   gap: 24px;
   margin-top: 50px;
+      align-items: center;
 `;
 
 export const Labelfirst = styled.label`
   display: flex;
-  margin-left: 580px;
   align-items: center;
   font-size: 20px;
   font-weight: bold;
@@ -18,7 +18,6 @@ export const Labelfirst = styled.label`
 
 export const Labelsecond = styled.label`
   display: flex;
-  margin-left: 556px;
   align-items: center;
   font-size: 20px;
   font-weight: bold;
@@ -33,7 +32,6 @@ export const Input = styled.input`
   border-color: rgb(112, 143, 173);
 `;
 export const Button = styled.button`
-  margin-left: 770px;
   margin-right: auto;
   display: flex;
   justify-content: center;
@@ -46,4 +44,6 @@ export const Button = styled.button`
   color: rgb(241, 247, 253);
   font-weight: bold;
   font-size: 16px;
+  margin-left: auto;
+    margin-right: auto;
 `;

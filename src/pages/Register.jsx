@@ -1,19 +1,26 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, Navigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { registerThunk } from 'redux/auth/operations';
+import { selectIsLoggedIn, selectUser } from 'redux/auth/selectors';
 import styled from 'styled-components';
 
 const Register = () => {
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const { name } = useSelector(selectUser);
 
   const submit = data => {
     console.log(data);
     dispatch(registerThunk(data));
   };
-
+  if (isLoggedIn) {
+    toast.success(`Welcome ${name}`);
+    return <Navigate to="/contacts" />;
+  }
   return (
     <div>
       <StyledTitle>Registration</StyledTitle>

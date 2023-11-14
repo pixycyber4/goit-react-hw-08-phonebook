@@ -3,12 +3,12 @@ import styled from 'styled-components';
 export const Contacts = styled.ul`
   display: flex;
   flex-direction: column;
-  margin-left: 620px;
-  margin-top: 80px;
+  margin-top: 50px;
   gap: 24px;
   font-size: 18px;
   font-weight: bold;
   color: rgb(67, 118, 169);
+      align-items: center;
 `;
 export const ContactItem = styled.li`
   display: flex;
