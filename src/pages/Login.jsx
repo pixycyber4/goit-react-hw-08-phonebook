@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { loginThunk } from 'redux/auth/operations';
-import { selectIsLoggedIn, selectUser } from 'redux/auth/selectors';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 import {
   StyledButton,
@@ -13,20 +13,17 @@ import {
   StyledSpan,
   StyledTitle,
 } from './Register';
-import { toast } from 'react-toastify';
 
 const Login = () => {
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const { name } = useSelector(selectUser);
 
   const submit = data => {
     dispatch(loginThunk(data));
   };
 
   if (isLoggedIn) {
-    toast.success(`Welcome ${name}`);
     return <Navigate to="/contacts" />;
   }
 

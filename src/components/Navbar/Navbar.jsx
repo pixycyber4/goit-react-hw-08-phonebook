@@ -1,23 +1,13 @@
-import { Loader } from 'components/Loader/Loader';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logoutThunk } from 'redux/auth/operations';
-import {
-  selectIsLoggedIn,
-  selectIsRefreshing,
-  selectUser,
-} from 'redux/auth/selectors';
+import { selectIsLoggedIn, selectUser } from 'redux/auth/selectors';
 import styled from 'styled-components';
 
 export const NavBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const name = useSelector(selectUser);
   const dispatch = useDispatch();
-  const isRefresh = useSelector(selectIsRefreshing);
-
-  if (isRefresh) {
-    return <Loader />;
-  }
 
   return (
     <StyledHeader>
